@@ -88,7 +88,33 @@ $monsters = getMonsters3();
                         </select>
                         <br>
                         <button class="btn btn-md btn-danger center-block" type="submit">Fight!</button>
-                    </form>
+                    </form> <br/>
+                    
+                    <h2 class = "text-bottom"> Add a monster </h2> <br/>
+                    <form method="post" action="functions.php"> <!-- Les données du formulaire seront envoyées au fichier functions.php -->
+ 
+                     <p>
+                       Please enter the characteristics of the new monster.
+                     </p>
+                     Name : <br/>
+                    <input type="text" name="Name" /> <br/>
+                    Strength : <br/>
+                    <input type="text" name="Strength"  />  <br/>
+                    Life : <br/>
+                    <input type="text" name="Life"  />  <br/>
+                    Type : <br/>
+                    <select name="Type" >
+                          <option value="water">Water</option>
+                          <option value="air">Air</option>
+                          <option value="earth">Earth</option>
+                        <option value="fire">Fire</option>
+                    </select> <br/>
+        
+                    <input type="submit" value="Valider" />
+
+        
+
+    </form>
                 </div>
             </div>
         </div>
