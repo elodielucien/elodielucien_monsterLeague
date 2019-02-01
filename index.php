@@ -2,7 +2,7 @@
 
 require __DIR__ . '/functions.php';
 
-$monsters = getMonsters2();
+$monsters = getMonsters3();
 
 ?>
 
@@ -56,12 +56,12 @@ $monsters = getMonsters2();
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($monsters as $monster) { ?>
+                    <?php foreach ($monsters as $m) { ?> 
                         <tr>
-                            <td><?php echo $monster->getName(); ?></td>   
-                            <td><?php echo $monster->getStrength(); ?></td>
-                            <td><?php echo $monster->getLife(); ?></td>
-                            <td><?php echo $monster->getType(); ?></td>
+                            <td><?php echo $m->getName(); ?></td>   
+                            <td><?php echo $m->getStrength(); ?></td>
+                            <td><?php echo $m->getLife(); ?></td>
+                            <td><?php echo $m->getType(); ?></td>
                         </tr>
                     <?php } ?>
                 </tbody>
@@ -74,7 +74,7 @@ $monsters = getMonsters2();
                         <select class=" form-control" name="first_monster_name">
                             <option value="">Choose a Monster</option>
                             <?php foreach ($monsters as $key => $monster) { ?>
-                                <option value="<?php echo $key; ?>"><?php echo $monster['name']; ?></option>
+                                <option value="<?php echo $key; ?>"><?php echo $monster->getName(); ?></option>
                             <?php } ?>
                         </select>
                         <br>
@@ -83,7 +83,7 @@ $monsters = getMonsters2();
                         <select class="form-control" name="second_monster_name">
                             <option value="">Choose a Monster</option>
                             <?php foreach ($monsters as $key => $monster) { ?>
-                                <option value="<?php echo $key; ?>"><?php echo $monster['name']; ?></option>
+                                <option value="<?php echo $key; ?>"><?php echo $monster->getName(); ?></option>
                             <?php } ?>
                         </select>
                         <br>

@@ -2,7 +2,7 @@
 
 require __DIR__ . '/functions.php';
 
-$monsters = getMonsters();
+$monsters = getMonsters3();
 
 $firstMonsterName = isset($_POST['first_monster_name']) ? $_POST['first_monster_name'] : null;
 $secondMonsterName = isset($_POST['second_monster_name']) ? $_POST['second_monster_name'] : null;
@@ -80,14 +80,14 @@ $fightResult = fight($firstMonster, $secondMonster);
                     <h2 class="text-center">The Matchup:</h2>
                     <p class="text-center">
                         <br>
-                        <?php echo $firstMonster['name']; ?>
+                        <?php echo $firstMonster->getName(); ?>
                         VS.
-                        <?php echo $secondMonster['name']; ?>
+                        <?php echo $secondMonster->getName(); ?>
                     </p>
 
                     <h3 class="text-center">Winner:
                         <?php if ($fightResult['winner']) { ?>
-                            <?php echo $fightResult['winner']['name']; ?>
+                            <?php echo $fightResult['winner']->getName(); ?>
                         <?php } else { ?>
                             Nobody
                         <?php } ?>
